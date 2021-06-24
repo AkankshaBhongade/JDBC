@@ -9,7 +9,7 @@ import com.jbk.config.DbConnection;
 public class UpdateEx {
    
 	public static void Update() {
-           Connection connection=	DbConnection.getConnection();
+          
            Scanner scanner=new Scanner(System.in);
            System.out.println("enter id which u want update student");
            int id =scanner.nextInt();
@@ -18,6 +18,7 @@ public class UpdateEx {
         
            if(b==true) {
         try {
+        
 	  
 	 System.out.println("enter name to update");
 	 String name =scanner.next();
@@ -26,15 +27,17 @@ public class UpdateEx {
 	 System.out.println("enter marks");
 	 int marks=scanner.nextInt();
 	 
-	 PreparedStatement preparedStatement=    connection.prepareStatement("update students set name=? and age=? and marks=? where id=?");
+		Connection connection=	DbConnection.getConnection();
+		
+	 PreparedStatement preparedStatement=connection.prepareStatement("update students set name=?, age=?, marks=? where id=?");
 	
 	 preparedStatement.setString(1, name);
 	 preparedStatement.setInt(2, age);
 	 preparedStatement.setInt(3, marks);
 	 preparedStatement.setInt(4, id);
 	 
-	 int updaterow= preparedStatement.executeUpdate();
-	 if(updaterow>0) {
+	 int result= preparedStatement.executeUpdate();
+	 if(result>0) {
 		 System.out.println("updated ");
 		 SelectEX.select();
 	 }
