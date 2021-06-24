@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 import com.jbk.config.DbConnection;
 
+
 public class DeleteEx {
 	public static void delete() {
 //		Class.forName("com.mysql.jdbc.Driver"); //this path taken from jar file
