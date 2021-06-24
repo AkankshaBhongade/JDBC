@@ -8,7 +8,6 @@ import java.sql.ResultSet;
 import com.jbk.config.DbConnection;
 
 public class SelectById {
-
 	public static boolean selectById(int id) {
 //		Class.forName("com.mysql.jdbc.Driver"); //this path taken from jar file
 //		
